@@ -44,18 +44,18 @@ services:
       start_period: 1s
   backend:
     build:
-      context: ./spo2back
+      context: ../spo2back
       dockerfile: Dockerfile
     container_name: backend
     ports:
-      - "3001:3001"
+      - "3002:3002"
     depends_on:
       - db
     volumes:
-      - ./src:/app/src
+      - ./uploads:/app/uploads
   frontend:
     build:
-      context: ./spo2front
+      context: ../spo2front
       dockerfile: Dockerfile
     container_name: frontend
     ports: 
